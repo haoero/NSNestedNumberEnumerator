@@ -4,8 +4,6 @@
 
 @property (nonatomic, strong) NSMutableArray *stack;
 
-@property (nonatomic, strong) NSArray *originalArray;
-
 @end
 
 @implementation NSNestedNumberEnumerator
@@ -14,7 +12,6 @@
 {
     self = [super init];
     if (self) {
-        self.originalArray = [array copy];
         self.stack = [NSMutableArray array];
         for (NSInteger i = array.count - 1; i >= 0; i --) {
             [self.stack addObject:array[i]];
